@@ -47,7 +47,7 @@ max_width = 1440
 
 ### Lektor Jinja2 Input
 ```html
-<img src="{{ 'waffle.jpg'|imagessrcjpg }}" width="{{ 'waffle.jpg'|imagessrcjpg }}
+<img src="{{ 'waffle.jpg'|imagessrcjpg }}" width="{{ 'waffle.jpg'|imagessrcjpg }}"
   srcset="{{ 'waffle.jpg'|imagessrcsetjpg }}" />
 ```
 
@@ -81,7 +81,7 @@ max_width = 1440
           waffle-medium.webp 900w,
           waffle-woowee.webp 1440w," />
 ```
-*(Please note that we added some new lines to make the example better readable)*
+*(Please note that we added some new lines to make the example better readable ans we assume that ``my_image: waffle-small.jpg`` comes from your .lr file)*
 
  Installation
 --------------
