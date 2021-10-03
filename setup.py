@@ -18,7 +18,7 @@ setup(
     author='L3D',
     author_email='l3d@c3woc.de',
     description=description,
-    keywords='Lektor plugin',
+    keywords='Lektor plugin image resize filter',
     license='MIT',
     long_description=readme,
     long_description_content_type='text/markdown',
