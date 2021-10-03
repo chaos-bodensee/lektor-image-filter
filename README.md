@@ -13,11 +13,33 @@ This plugin is designed to work together with the [lektor-image-resize](https://
 
  Current Filters:
 ------------------
- + ``{{ 'waffle.jpg' | webpimagesizes }}`` will print the configured webp image sized based on the input file name.
- + ``{{ 'waffle.jpg'| jpgimagesizes }}`` will print the configured jpg image sized based on the input file name.
+ + ``webpimagesizes`` will print the configured webp image sized based on the input file name.
+ + ``jpgimagesizes`` will print the configured jpg image sized based on the input file name.
 
- Example
----------
+ Configuration
+---------------
+You can configure the image width in the config file called `configs/image-resize.ini` and add
+a few sections for images. The section names can be whatever you want, the
+final images will be called ``$(imagename)-$(sectionname).jpg`` and ``$(imagename)-$(sectionname).webp``.
+
+If the ``max_width`` enty does not exist the entry will be ignored.
+
+Here is a example config file:
+
+```ini
+[small]
+max_width = 512
+
+[medium]
+max_width = 900
+max_height = 900
+
+[woowee]
+max_width = 1440
+```
+
+ Example Output
+----------------
 
 ### Lektor Jinja2 Input
 ```html
