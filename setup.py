@@ -26,7 +26,7 @@ setup(
     packages=find_packages(),
     py_modules=['lektor_image_filter'],
     # url='[link to your repository]',
-    version='0.1',
+    version='0.2',
     classifiers=[
         'Framework :: Lektor',
         'Environment :: Plugins',
