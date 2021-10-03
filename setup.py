@@ -26,7 +26,7 @@ setup(
     packages=find_packages(),
     py_modules=['lektor_image_filter'],
     url='https://github.com/chaos-bodensee/lektor-image-filter.git',
-    version='0.6',
+    version='0.7',
     classifiers=[
         'Framework :: Lektor',
         'Environment :: Plugins',

@@ -11,6 +11,11 @@ A [Lektor](https://getlektor.com) filter to print the input image in different p
 
 This plugin is designed to work together with the [lektor-image-resize](https://github.com/chaos-bodensee/lektor-image-resize) Plugin.
 
+ Current Filters:
+------------------
+ + ``{{ 'waffle.jpg' | webpimagesizes }}`` will print the configured webp image sized based on the input file name.
+ + ``{{ 'waffle.jpg'| jpgimagesizes }}`` will print the configured jpg image sized based on the input file name.
+
  Example
 ---------
 
