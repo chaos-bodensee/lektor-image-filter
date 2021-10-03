@@ -61,6 +61,14 @@ max_width = 1440
 
  Advanced Lektor Example
 -------------------------
+### Lektor Models Definition
+```ini
+[fields.my_image]
+label = Example Image
+description = Select a Image from the Attatchments of this site. Upload one, if no one is available
+type = select
+source = record.attachments.images
+```
 ### Lektor Jinja2 Input
 ```html
 {% set image = record.attachments.images.get(this.my_image) %}
@@ -81,7 +89,7 @@ max_width = 1440
           waffle-medium.webp 900w,
           waffle-woowee.webp 1440w," />
 ```
-*(Please note that we added some new lines to make the example better readable ans we assume that ``my_image: waffle-small.jpg`` comes from your .lr file)*
+*(Please note that we added some new lines to make the example better readable ans we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)*
 
  Installation
 --------------
