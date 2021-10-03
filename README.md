@@ -53,3 +53,9 @@ max_width = 1440
           waffle-medium.webp 900w,
           waffle-woowee.webp 1440w," />
 ```
+
+ Installation
+--------------
+```bash
+lektor plugin add lektor-image-filter
+```
