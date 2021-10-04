@@ -15,7 +15,7 @@ def create_src_html(fileprefix, config, filesuffix):
         width = int(size.get("max_width", "0"))
         if width > 1:
             if index < 1:
-                returnvalue = str(fileprefix) + "-" + str(name) + str(filesuffix)
+                returnvalue = str(f"{ fileprefix }-{ name }{ filesuffix }")
             index =+ 1
     return str(returnvalue)
 

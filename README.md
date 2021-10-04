@@ -56,7 +56,7 @@ max_width = 1440
 <img src="waffle-small.webp" width="512"
   srcset="waffle-small.webp  512w,
           waffle-medium.webp 900w,
-          waffle-woowee.webp 1440w," />
+          waffle-woowee.webp 1440w" />
 ```
 
  Advanced Lektor Example
@@ -87,7 +87,7 @@ source = record.attachments.images
 <img src="waffle-small.webp" width="512"
   srcset="waffle-small.webp  512w,
           waffle-medium.webp 900w,
-          waffle-woowee.webp 1440w," />
+          waffle-woowee.webp 1440w" />
 ```
 *(Please note that we added some new lines to make the example better readable ans we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)*
 
