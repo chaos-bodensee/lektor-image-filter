@@ -72,7 +72,7 @@ source = record.attachments.images
 ### Lektor Jinja2 Input
 ```html
 {% set image = record.attachments.images.get(this.my_image) %}
-<img src="{{ image | url | imagessrcwebp }}" width="{{ image | url | imageswidthwebp }}"
+<img src="{{ image | url | imagessrcwebp }}" width="{{ image | imageswidthwebp }}"
      srcset="{{ image | url | imagessrcsetwebp }}" />
 ```
 #### Explaination Input:
