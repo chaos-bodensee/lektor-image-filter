@@ -36,7 +36,7 @@ def create_srcset_html(fileprefix, config, filesuffix):
     for name, size in config:
         width = int(size.get("max_width", "0"))
         if width > 1:
-            returnlist.append(f"{ fileprefix }-{ name }-{ filesuffix } { width }w")
+            returnlist.append(f"{ fileprefix }-{ name }{ filesuffix } { width }w")
     return str(', '.join(returnlist))
 
 def webp_image_filter_src(inputstring):
