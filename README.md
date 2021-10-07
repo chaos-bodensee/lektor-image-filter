@@ -57,7 +57,7 @@ max_width = 1920
 <img src="waffle-small.webp"
   width="640" height="360"
   srcset="waffle-small.webp  640w,
-          waffle-woowee.webp 1920w," />
+          waffle-woowee.webp 1920w" />
 ```
 
 -> If the ``max_width`` is not defined the option will be skipped in srcset!
@@ -91,7 +91,7 @@ source = record.attachments.images
   width="640" height="360"
   srcset="waffle-small.webp  640w,
           waffle-medium.webp 1280w,
-          waffle-woowee.webp 1920w," />
+          waffle-woowee.webp 1920w" />
 ```
 -> If the ``max_width`` is not defined we try to compute the option based on the ``max_height`` entry and the source image aspect ratio.
 
