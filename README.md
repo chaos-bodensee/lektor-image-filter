@@ -57,9 +57,10 @@ max_width = 1920
 <img src="waffle-small.webp"
   width="640" height="360"
   srcset="waffle-small.webp  640w,
-          waffle-medium.webp 1280w,
           waffle-woowee.webp 1920w," />
 ```
+
+-> If the ``max_width`` is not defined the option will be skipped in srcset!
 
  Advanced Lektor Example
 -------------------------
@@ -92,7 +93,9 @@ source = record.attachments.images
           waffle-medium.webp 1280w,
           waffle-woowee.webp 1920w," />
 ```
-*(Please note that we added some new lines to make the example better readable and we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)*
+-> If the ``max_width`` is not defined we try to compute the option based on the ``max_height`` entry and the source image aspect ratio.
+
+*(Please note that we added some new lines to make the example better readable and we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)* and is a image in ``16:9`` aspect ratio.
 
  Installation
 --------------
