@@ -14,11 +14,11 @@ This plugin is designed to work together with the [lektor-image-resize](https://
  Current Filters:
 ------------------
  + ``imagessrcsetwebp`` will print the configured sizes as ``webp`` to put in a ``srcset`` element.
- + ``imageswidthwebp`` will print the first configured ``webp`` image width to put in a ``width`` element.
  + ``imagessrcwebp`` will print the first configured ``webp`` image name to put in a ``src`` element.
  + ``imagessrcsetjpg`` will print the configured sizes as ``jpg`` to put in a ``srcset`` element.
- + ``imageswidthjpg`` will print the first configured ``jpg`` image width to put in a ``width`` element.
  + ``imagessrcjpg`` will print the first configured ``jpg`` image name to put in a ``src`` element.
+ + ``firstwidth`` will print the first configured  image width to put in a ``width`` element. If you use the [Advanced Lektor Example](#advanced-lektor-example) we try to compute the width if no is provided,
+ + ``firstheight`` will print the first configured  image height to put in a ``height`` element. If you use the [Advanced Lektor Example](#advanced-lektor-example) we try to compute the height if no is provided,
 
  Configuration
 ---------------
@@ -32,14 +32,14 @@ Here is a example config file:
 
 ```ini
 [small]
-max_width = 512
+max_width = 640
+max_height = 360
 
 [medium]
-max_width = 900
-max_height = 900
+max_height = 720
 
 [woowee]
-max_width = 1440
+max_width = 1920
 ```
 
  Simple Lektor Example
@@ -47,16 +47,18 @@ max_width = 1440
 
 ### Lektor Jinja2 Input
 ```html
-<img src="{{ 'waffle.jpg'|imagessrcjpg }}" width="{{ 'waffle.jpg'|imagessrcjpg }}"
+<img src="{{ 'waffle.jpg'|imagessrcjpg }}"
+  width="{{ 'random_string'|firstwidth }}" height="{{ ''|firstheight }}"
   srcset="{{ 'waffle.jpg'|imagessrcsetjpg }}" />
 ```
 
 ### Lektor HTML Output:
 ```html
-<img src="waffle-small.webp" width="512"
-  srcset="waffle-small.webp  512w,
-          waffle-medium.webp 900w,
-          waffle-woowee.webp 1440w," />
+<img src="waffle-small.webp"
+  width="640" height="360"
+  srcset="waffle-small.webp  640w,
+          waffle-medium.webp 1280w,
+          waffle-woowee.webp 1920w," />
 ```
 
  Advanced Lektor Example
@@ -72,24 +74,25 @@ source = record.attachments.images
 ### Lektor Jinja2 Input
 ```html
 {% set image = record.attachments.images.get(this.my_image) %}
-<img src="{{ image | url | imagessrcwebp }}" width="{{ image | imageswidthwebp }}"
-     srcset="{{ image | url | imagessrcsetwebp }}" />
+<img src="{{ image | imagessrcwebp }}"
+     width="{{ image | firstwidth }}" height="{{ image | firstheight }}"
+     srcset="{{ image | imagessrcsetwebp }}" />
 ```
 #### Explaination Input:
 - First we created the Jinaja2-variable ``image`` that will contain our image (``this.box_image``) to make this example better readable. *(We assume you know how to create variables in lektor)*
 - Next line we created a html image tag with ``src`` and ``width``
 - Last we created the ``srcset`` element with all configured sizes.
-- By the way we added the [url filter](https://www.getlektor.com/docs/api/templates/filters/url/) in our example. there are options like ``|url(external=true)`` that you could like.
 
 ### Lektor HTML Output
 ```html
 
-<img src="waffle-small.webp" width="512"
-  srcset="waffle-small.webp  512w,
-          waffle-medium.webp 900w,
-          waffle-woowee.webp 1440w," />
+<img src="waffle-small.webp"
+  width="640" height="360"
+  srcset="waffle-small.webp  640w,
+          waffle-medium.webp 1280w,
+          waffle-woowee.webp 1920w," />
 ```
-*(Please note that we added some new lines to make the example better readable ans we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)*
+*(Please note that we added some new lines to make the example better readable and we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)*
 
  Installation
 --------------
