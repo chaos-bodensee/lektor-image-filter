@@ -87,7 +87,6 @@ source = record.attachments.images
 
 ### Lektor HTML Output
 ```html
-
 <img src="waffle-small.webp"
   width="640" height="360"
   srcset="waffle-small.webp  640w,
