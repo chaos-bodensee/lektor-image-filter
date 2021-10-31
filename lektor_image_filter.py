@@ -13,10 +13,10 @@ def get_width(inputstring, size):
       return width for first row where width > 1
       Calculate width if no one is defined in config and image is lektor.db.Image.
     '''
-    width = int(size.get("max_width", "0"))
+    width = int(size.get("width", "0"))
     if width > 1:
         if str(type(inputstring)) == "<class 'lektor.db.Image'>":
-            height = int(size.get("max_height", "0"))
+            height = int(size.get("height", "0"))
             if height > 1:
                 src_width = inputstring.width
                 src_height = inputstring.width
@@ -32,8 +32,8 @@ def get_height(inputstring, size):
       return height for first row where width > 1
       Calculate height if no one is defined in config and image is lektor.db.Image
     '''
-    height = int(size.get("max_height", "0"))
-    width = int(size.get("max_width", "0"))
+    height = int(size.get("height", "0"))
+    width = int(size.get("width", "0"))
     if width > 1:
         if height > 1:
             return int(height)
