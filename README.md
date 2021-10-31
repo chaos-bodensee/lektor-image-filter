@@ -26,20 +26,20 @@ You can configure the image width in the config file called `configs/image-resiz
 a few sections for images. The section names can be whatever you want, the
 final images will be called ``$(imagename)-$(sectionname).jpg`` and ``$(imagename)-$(sectionname).webp``.
 
-If the ``max_width`` enty does not exist the entry will be ignored.
+If the ``width`` enty does not exist the entry will be ignored.
 
 Here is a example config file:
 
 ```ini
 [small]
-max_width = 640
-max_height = 360
+width = 640
+height = 360
 
 [medium]
-max_height = 720
+height = 720
 
 [woowee]
-max_width = 1920
+width = 1920
 ```
 
  Simple Lektor Example
@@ -57,10 +57,11 @@ max_width = 1920
 <img src="waffle-small.webp"
   width="640" height="360"
   srcset="waffle-small.webp  640w,
+          waffle-woowee.webp 1280w,
           waffle-woowee.webp 1920w" />
 ```
 
--> If the ``max_width`` is not defined the option will be skipped in srcset!
+-> If the ``width`` is not defined the option will be skipped in srcset!
 
  Advanced Lektor Example
 -------------------------
@@ -93,7 +94,7 @@ source = record.attachments.images
           waffle-medium.webp 1280w,
           waffle-woowee.webp 1920w" />
 ```
--> If the ``max_width`` is not defined we try to compute the option based on the ``max_height`` entry and the source image aspect ratio.
+-> If the ``width`` is not defined we try to compute the option based on the ``height`` entry and the source image aspect ratio.
 
 *(Please note that we added some new lines to make the example better readable and we assume that ``my_image: waffle.jpg`` comes from your .lr file, created via lektor admin menu)* and is a image in ``16:9`` aspect ratio.
 
